@@ -1,0 +1,2 @@
+class ATM
+end
