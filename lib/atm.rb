@@ -1,10 +1,11 @@
-require 'Date'
+require 'date'
 
 class ATM
-attr_accessor :funds
+  attr_accessor :funds
+  FUNDS_ON_INITIALIZE = 1000
 
   def initialize
-    @funds = 1000
+    @funds = FUNDS_ON_INITIALIZE
   end
 
   def withdraw(amount, account)
@@ -23,7 +24,7 @@ attr_accessor :funds
 
   def perform_transaction(amount, account)
     @funds -= amount
-    account.balance = account.balance - amount
+    account.balance -= amount
     { status: true, message: 'successful', date: Date.today, amount: amount}
   end
 end

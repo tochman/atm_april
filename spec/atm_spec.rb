@@ -3,6 +3,7 @@ require './lib/atm.rb'
 describe ATM do
 
   let(:account) {instance_double('Account')}
+
    before do
      allow(account).to receive(:balance).and_return(100)
      allow(account).to receive(:balance=)
